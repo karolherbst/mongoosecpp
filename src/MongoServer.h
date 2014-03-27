@@ -18,7 +18,7 @@ class Server {
 	struct ContextDeleter {
 		void operator()(::mg_context * ctx) const;
 	};
-	std::unique_ptr<::mg_context,ContextDeleter> ctx;
+	std::unique_ptr< ::mg_context,ContextDeleter> ctx;
 	std::vector<std::string> options;
 	std::vector<char const *> getOptions() const;
 public:
