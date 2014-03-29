@@ -91,5 +91,18 @@ void Response::write(std::istream & is)
 	}
 }
 
+void Response::writeHeader(char const * bufType, const char * bufValue)
+{
+	if( ! headersSent && statusSet )
+	{
+		do_printf("%s: %s\r\n", bufType, bufValue);
+	}
+}
+
+void Response::writeHeader(std::string const & headerType, std::string const & headerValue)
+{
+	writeHeader(headerType.c_str(), headerValue.c_str());
+}
+
 
 }

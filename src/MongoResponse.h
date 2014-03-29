@@ -25,6 +25,8 @@ public:
 	int vprintf(const char *fmt, va_list ap);  // :-[
 	void write(char const * buf, size_t size);
 	void write(std::istream & is);
+	void writeHeader(char const * bufType, const char * bufValue);
+	void writeHeader(std::string const & headerType, std::string const & headerValue);
 };
 
 }
